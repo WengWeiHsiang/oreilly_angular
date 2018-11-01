@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StockItemComponent implements OnInit {
 
+  title = 'stock-item is work!';
   constructor() { }
 
   ngOnInit() {
