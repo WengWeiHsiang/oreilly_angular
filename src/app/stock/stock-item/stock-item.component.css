@@ -13,3 +13,11 @@
 .price {
   text-align: center;
 }
+
+.positive {
+  color: red;
+}
+
+.negative {
+  color: green;
+}

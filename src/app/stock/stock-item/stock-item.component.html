@@ -1,8 +1,8 @@
 <div class="stock-container">
   <div class="name">
-    <h3>{{name}}</h3> - <h4>({{code}})</h4>
+    {{name}} - ({{code}})
   </div>
-  <div class="price">
+  <div class="price" [class]="positiveChang?'positive':'negativee'">
     $ {{price}}
   </div>
 </div>
