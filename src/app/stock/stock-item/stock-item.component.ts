@@ -11,24 +11,32 @@ export class StockItemComponent implements OnInit {
 
   public stock: Stock;
   public stockClasses;
+  public stockStyles;
 
   constructor() { }
 
   ngOnInit() {
     this.stock = new Stock('Test Stock Company', 'TSC', 85, 80);
-    let diff = this.stock.price / this.stock.previousPrice - 1;
-    let largeChange = Math.abs(diff) > 0.05;
+    const diff = this.stock.price / this.stock.previousPrice - 1;
+    const largeChange = Math.abs(diff) > 0.05;
+
+    this.stockStyles = {
+      'color': this.stock.isPositiveChange() ? 'red' : 'green',
+      'font-size': largeChange ? '1.2em' : '0.8em'
+    };
+
+    /*
     this.stockClasses = {
-      "positive": this.stock.isPositiveChange(),
-      "negative": !this.stock.isPositiveChange(),
-      "large-change": largeChange,
-      "small-change": !largeChange
-    }
+      'positive': this.stock.isPositiveChange(),
+      'negative': !this.stock.isPositiveChange(),
+      'large-change': largeChange,
+      'small-change': !largeChange
+    };
+    */
   }
 
   toggleFavorite(event) {
     console.log('We are toggling the favorite state for this stock', event);
     this.stock.favorite = !this.stock.favorite;
   }
-
 }

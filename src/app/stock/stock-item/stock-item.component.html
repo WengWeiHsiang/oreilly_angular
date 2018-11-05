@@ -2,7 +2,10 @@
   <div class="name">
     {{stock.name}} - ({{stock.code}})
   </div>
+  <!--
   <div class="price" [ngClass]="stockClasses">
+  -->
+  <div class="price" [ngStyle]="stockStyles">
     $ {{stock.price}}
   </div>
   <button (click)="toggleFavorite($event)" [disabled]="stock.favorite">
